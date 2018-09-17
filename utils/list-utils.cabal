@@ -1,0 +1,9 @@
+cabal-version: 2.2
+name: list-utils
+version: 0.1.0.0
+
+library
+  exposed-modules: Utils
+  build-depends: ghc-prim
+  default-language: Haskell2010
+  default-extensions: LambdaCase, RankNTypes, NoImplicitPrelude, BangPatterns

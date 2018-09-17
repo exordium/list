@@ -1,0 +1,25 @@
+cabal-version: 2.2
+name: list-indef
+version: 0.1.0.0
+
+library
+  signatures: Elt
+  exposed-modules: List
+  build-depends: ghc-prim
+  default-language: Haskell2010
+  default-extensions: LambdaCase, RankNTypes, NoImplicitPrelude, BangPatterns, TypeFamilies, TypeSynonymInstances
+
+library list-test-elt
+  exposed-modules: Elt
+  hs-source-dirs: test
+  build-depends: base
+  default-language: Haskell2010
+  default-extensions: LambdaCase, RankNTypes, BangPatterns
+
+library list-test
+  exposed-modules: Test
+  hs-source-dirs: test
+  build-depends: list-indef, ghc-prim, list-test-elt, base
+  default-language: Haskell2010
+  default-extensions: LambdaCase, RankNTypes, BangPatterns, StandaloneDeriving, TypeApplications
+  mixins: list-indef (List as List.Int)
